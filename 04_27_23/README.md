@@ -6,7 +6,7 @@ modello per controllare la temperatura della piastrina ($T_p$) agendo sul comand
 
 ## Modelica
 
-<img src=".\Images\Image_1.png">
+![Image_1](./Images/Image_1.png)
 
 **Verifica della stabilità del sistema in risposta allo scalino**
 
@@ -16,23 +16,23 @@ modello per controllare la temperatura della piastrina ($T_p$) agendo sul comand
 
 - Istante di tempo: `2000`
 
-<img src=".\Images\Image_2.png">
+![Image_2](./Images/Image_2.png)
 
 ### Simulazione: 
 
-<img src=".\Images\Image_3.png">
+![Image_3](./Images/Image_3.png)
 
-<img src=".\Images\Image_4.png">
+![Image_4](./Images/Image_4.png)
 
-<img src=".\Images\Image_5.png">
+![Image_5](./Images/Image_5.png)
 
 **Parametri mostrati nel grafico:**
 
-<img src=".\Images\Image_6.png">
+![Image_6](./Images/Image_6.png)
 
 **File output:**
 
-<img src=".\Images\Image_7.png">
+![Image_7](./Images/Image_7.png)
 
 ## Matlab
 
@@ -56,7 +56,7 @@ Si può ricavare:
 
 <p align="center"><img src="https://latex.codecogs.com/svg.latex?T_1%20%3D%20%5Cfrac%7BT_A%7D%7B5%7D"></p>
 
-<img src=".\Images\Image_8.png">
+![Image_8](./Images/Image_8.png)
 
 ``` matlab
 mu = 4.15/30;
@@ -74,7 +74,7 @@ grid;
 
 $T_2$ con valore arbitrario ($T_2 \ll T_1$)
 
-<img src=".\Images\Image_9.png">
+![Image_9](./Images/Image_9.png)
 
 ``` matlab
 T2 = 10;
@@ -93,7 +93,7 @@ $T_3$ con valore arbitrario ($T_3 \ll T_2$)
 
 $T_z$ con valore arbitrario ($|T_3| < |T_z| < |T_2|$)
 
-<img src=".\Images\Image_10.png">
+![Image_10](./Images/Image_10.png)
 
 ``` matlab
 Tz = 5;
@@ -113,17 +113,17 @@ grid;
 
 ### Setup Sinusoide
 
-<img src=".\Images\Image_11.png">
+![Image_11](./Images/Image_11.png)
 
 ### Simulazione
 
 (Stop time 12000 → sinusoide non interferisce con scalino)
 
-<img src=".\Images\Image_12.png">
+![Image_12](./Images/Image_12.png)
 
 **Parametri mostrati nel grafico:**
 
-<img src=".\Images\Image_13.png">
+![Image_13](./Images/Image_13.png)
 
 ## Matlab
 
@@ -148,7 +148,7 @@ plot(t, Q1, 'b', t, 10*Tp, 'r');
 grid;
 ```
 
-<img src=".\Images\Image_14.png">
+![Image_14](./Images/Image_14.png)
 
 - Calcolare punti della risposta dal grafico
 
@@ -239,7 +239,7 @@ semilogx(w, pM1, 'b', w, pM2, 'g', w, pM3, 'r', wp, pp, 'ok');
 legend('primo ordine', 'secondo ordine', 'terzo ordine con zero');
 ```
 
-<img src=".\Images\Image_15.png">
+![Image_15](./Images/Image_15.png)
 
 Si nota che l’approssimazione più corretta è quella rossa, ma è ancora migliorabile:
 
@@ -258,7 +258,7 @@ semilogx(w, pM3, 'r', w, pM4, 'b', wp, pp, 'ok');
 legend('M3','M4');
 ```
 
-<img src=".\Images\Image_16.png">
+![Image_16](./Images/Image_16.png)
 
 Purtroppo però il modello ottimizzato per risposta in frequenza (`M4`) approssima male la risposta allo scalino.
 
