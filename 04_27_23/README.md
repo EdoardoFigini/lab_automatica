@@ -6,7 +6,7 @@ modello per controllare la temperatura della piastrina ($T_p$) agendo sul comand
 
 ## Modelica
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/60da06f2-abc9-40fa-911c-5233d739d030/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=c06e9c4b94693399206e9131cfb4daed5e39e866d913733ca0365bdde4044be8&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_1.png">
 
 **Verifica della stabilità del sistema in risposta allo scalino**
 
@@ -16,23 +16,23 @@ modello per controllare la temperatura della piastrina ($T_p$) agendo sul comand
 
 - Istante di tempo: `2000`
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7852de4c-ad88-4605-94f3-46fb5bab9540/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=580d49a2707d15f63c67b14b2d041c92540d88222ea2f525054938d3079ba4bc&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_2.png">
 
 ### Simulazione: 
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/580fe160-2a1f-4bfd-9b9d-ed267ec8e0ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=235d8598f8df1ab2456a78998688031f058680b9373d9c3e9085140babb57864&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_3.png">
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/35acefb8-b5ff-4336-87ca-d73c1475f9f5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=decee8b548a084753d95cd7f35dd438df99f99d014b05f35a4bd29bd9e6b6f22&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_4.png">
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/53005e67-b25c-40ab-8684-aab8ea3f22f2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=5121c4a52dcb34d3b0c3a70e8c9716a4454784f8b7c50f2ac206fb8ef99585a1&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_5.png">
 
 **Parametri mostrati nel grafico:**
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/52055dad-c93a-4385-b022-3ae66c5adfa4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=a3d4d9fc504f5e45de8f14459e3137f1e47820d794723469914c9a6eb198ce06&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_6.png">
 
 **File output:**
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ffb03ff1-8ebd-4700-981f-d77f03a966e1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=30b250555df12d35795a1789f661add6ce4e3bff1a2cce6cbb0c5150d9340c55&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_7.png">
 
 ## Matlab
 
@@ -56,7 +56,7 @@ Si può ricavare:
 
 <p align="center"><img src="https://latex.codecogs.com/svg.latex?T_1%20%3D%20%5Cfrac%7BT_A%7D%7B5%7D"></p>
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3b18618b-1c0c-455a-85f9-42c35d596998/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172917Z&X-Amz-Expires=3600&X-Amz-Signature=d3f2f1031fbb21d7f32cbbf6bdbe5fca39ec9db573d0882c0e15a56854975a4f&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_8.png">
 
 ``` matlab
 mu = 4.15/30;
@@ -74,7 +74,7 @@ grid;
 
 $T_2$ con valore arbitrario ($T_2 \ll T_1$)
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/67bfa9d7-8eae-41aa-8600-bc5bfc96e418/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172918Z&X-Amz-Expires=3600&X-Amz-Signature=48410d3757e8190c68a1630d889f731fbbaee0ca04371d4f001f661099c3da17&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_9.png">
 
 ``` matlab
 T2 = 10;
@@ -93,7 +93,7 @@ $T_3$ con valore arbitrario ($T_3 \ll T_2$)
 
 $T_z$ con valore arbitrario ($|T_3| < |T_z| < |T_2|$)
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dc4b1bfe-a7eb-44e4-8830-0e21ba30febb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172919Z&X-Amz-Expires=3600&X-Amz-Signature=5d73b2aae550ab31a5c37b3800660e77d14c1bbffca90e4f929c736927af6056&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_10.png">
 
 ``` matlab
 Tz = 5;
@@ -113,17 +113,17 @@ grid;
 
 ### Setup Sinusoide
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ab2e2523-799c-438e-9ea8-b58f03a618dd/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=744a28787eb31736a492a64dc3f7f83d7f1bbd17a61f26612f994681ad34a84e&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_11.png">
 
 ### Simulazione
 
 (Stop time 12000 → sinusoide non interferisce con scalino)
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1309567a-9daf-47c7-a65c-86689506e03d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=d29d6bbdda22402d701469d061a74d859038a25165e94bb1e3c379b430aef35e&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_12.png">
 
 **Parametri mostrati nel grafico:**
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb4ae55a-be73-4752-97b5-3016ead3841d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=0d81d05c17e36c14845c9e67d32a5f52914ede192087ef2d78450bdda78b0501&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_13.png">
 
 ## Matlab
 
@@ -148,7 +148,7 @@ plot(t, Q1, 'b', t, 10*Tp, 'r');
 grid;
 ```
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7b8ee494-43ca-4f8a-a049-b683b8e45e39/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172915Z&X-Amz-Expires=3600&X-Amz-Signature=105071b31ec46977e27bfe859b1bbb0e6a76483f0647df1d1406b0bb6969f595&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_14.png">
 
 - Calcolare punti della risposta dal grafico
 
@@ -239,7 +239,7 @@ semilogx(w, pM1, 'b', w, pM2, 'g', w, pM3, 'r', wp, pp, 'ok');
 legend('primo ordine', 'secondo ordine', 'terzo ordine con zero');
 ```
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e5cff7ce-f86f-4f41-b417-c52c1aedc794/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172926Z&X-Amz-Expires=3600&X-Amz-Signature=dded52196148e76d784d3ada05285168426eebaee8a7c0a9313e7bb093043f3e&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_15.png">
 
 Si nota che l’approssimazione più corretta è quella rossa, ma è ancora migliorabile:
 
@@ -258,7 +258,7 @@ semilogx(w, pM3, 'r', w, pM4, 'b', wp, pp, 'ok');
 legend('M3','M4');
 ```
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/73f64814-199f-460f-b2ea-fd6134da11a1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230428T172926Z&X-Amz-Expires=3600&X-Amz-Signature=b9f48053890c173c545c72a656648173d910c5fe2dd61270ebbc90e98db91959&X-Amz-SignedHeaders=host&x-id=GetObject">
+<img src=".\Images\Image_16.png">
 
 Purtroppo però il modello ottimizzato per risposta in frequenza (`M4`) approssima male la risposta allo scalino.
 
