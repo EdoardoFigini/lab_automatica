@@ -10,27 +10,37 @@ sintetizzare, simulare e provare sperimentalmente diversi regolatori di temperat
 
 `R1` del tipo PI:
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?R_1%28s%29%20%3D%20K%5Cleft%281%2B%20%5Cfrac%7B1%7D%7Bs%20T_i%7D%5Cright%29"></p>
+```math
+R_1(s) = K\left(1+ \frac{1}{s T_i}\right)
+```
 
 Per ottenere un tempo di assestamento `Ta=120s` , occorre definire la pulsazione critica $\omega_c$: 
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Comega_%7Bc_%7BR1%7D%7D%20%3D%200.04%20%5Ctextnormal%7B%20rad/s%7D"></p>
+```math
+\omega_{c_{R1}} = 0.04 \textnormal{ rad/s}
+```
 
 Per la sintesi di `R1` (facendo riferimento a `M1`) si pone `Ti = T1`, in modo che lo zero del regolatore cancelli il polo del modello.
 
 Si ottiene quindi la funzione di trasferimento ad anello
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?L%28s%29%20%3D%20%5Cfrac%7B%5Cmu%20K%7D%7BsT_1%7D%20"></p>
+```math
+L(s) = \frac{\mu K}{sT_1} 
+```
 
 La cui pulsazione critica vale 
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Comega_c%20%3D%20%5Cfrac%7B%5Cmu%20K%20%7D%7BT_1%7D"></p>
+```math
+\omega_c = \frac{\mu K }{T_1}
+```
 
 da cui
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?K%20%3D%20%5Comega_c%20%5Ccdot%20%5Cfrac%7BT_1%7D%7B%5Cmu%7D"></p>
+```math
+K = \omega_c \cdot \frac{T_1}{\mu}
+```
 
-``` matlab
+```matlab
 Ti = 130;
 wc = 5/120;
 K = wc * Ti/mu;
@@ -42,7 +52,7 @@ step(R1*M1 / (1 + R1*M1), 150);
 
 Valutazione di pulsazione critica e margine di fase nei 4 modelli:
 
-``` matlab
+```matlab
 [gm,pm,wu,wc]=margin(R1*M1);
 disp([wc,pm])
 [gm,pm,wu,wc]=margin(R1*M2);
@@ -53,7 +63,7 @@ disp([wc,pm])
 disp([wc,pm])
 ```
 
-``` bash
+```bash
 0.0436   90.4735
 
 0.0404   68.4966
@@ -65,7 +75,7 @@ disp([wc,pm])
 
 Simulazione dei modelli in risposta a PV e CS
 
-``` matlab
+```matlab
 subplot(211);
 F1 = R1*M1/(1+R1*M1); % funzione di sensitività complementare
 F2 = R1*M2/(1+R1*M2);
@@ -82,7 +92,7 @@ legend('M1','M2','M3');
 
 ### Valutazione della risposta in frequenza 
 
-``` matlab
+```matlab
 bode(M1, M2, M3, M4);
 legend('M1','M2','M3', 'M4');
 ```
@@ -94,9 +104,11 @@ quindi per ottenere risposte uguali in tutti i modelli bisogna scegliere $\omega
 
 ## Regolatore R2
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Comega_%7Bc_%7BR2%7D%7D%20%3D%200.005%20%5Ctextnormal%7B%20rad/s%7D"></p>
+```math
+\omega_{c_{R2}} = 0.005 \textnormal{ rad/s}
+```
 
-``` matlab
+```matlab
 wc = 0.005;
 K2 = wc * Ti/mu;
 R2 = K2 * (1 + tf(1, [Ti 0]));
@@ -104,13 +116,15 @@ R2 = K2 * (1 + tf(1, [Ti 0]));
 
 Il tempo di assestamento $Ta $ del regolatore sarà ora
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?T_a%20%3D%20%5Cfrac%7B5%7D%7B%5Comega_%7Bc_%7BR2%7D%7D%7D%20%3D%201000s"></p>
+```math
+T_a = \frac{5}{\omega_{c_{R2}}} = 1000s
+```
 
 invece dei $120s$ desiderati.
 
 Simulazione dei modelli in risposta a PV e CS
 
-``` matlab
+```matlab
 subplot(211);
 step(R2*M1/(1+R2*M1),R2*M2/(1+R2*M2),R2*M3/(1+R2*M3),1000);
 legend('M1','M2','M3');
@@ -132,9 +146,11 @@ Si richiede una banda di controllo che si estende a pulsazioni dove `M1` non è 
 
 ad esempio
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Comega_%7Bc_%7BR3%7D%7D%20%3D%200.5%20%5Ctextnormal%7B%20rad/s%7D"></p>
+```math
+\omega_{c_{R3}} = 0.5 \textnormal{ rad/s}
+```
 
-``` matlab
+```matlab
 wc = 0.5;
 K3 = wc * Ti/mu;
 R3 = K3 * (1 + tf(1, [Ti 0]));
@@ -157,21 +173,29 @@ Si vede che le simulazioni con `M1` non descrivono in maniera adeguata il compor
 
 Regolatore PID (reale) usando un modello migliore (`M2`)
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?R_4%28s%29%20%3D%20%5Cfrac%7B%5Cmu_R%7D%7Bs%7D%20%5Cfrac%7B%281%2BsT_1%29%281%2BsT_2%29%7D%7B%281%20%2B%20s%5Ctau%29%7D"></p>
+```math
+R_4(s) = \frac{\mu_R}{s} \frac{(1+sT_1)(1+sT_2)}{(1 + s\tau)}
+```
 
 Si sintetizza `R4` im modo che la FDT ad anello abbia forma 
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?L%28s%29%20%3D%20%5Cfrac%7B0.1%7D%7Bs%281%20%2B%202s%29%7D"></p>
+```math
+L(s) = \frac{0.1}{s(1 + 2s)}
+```
 
 per ottenere
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Comega_%7Bc_%7BR3%7D%7D%20%3D%200.1%20%5C%2C%20%5Ctextnormal%7Brad/s%7D"></p>
+```math
+\omega_{c_{R3}} = 0.1 \, \textnormal{rad/s}
+```
 
 `R4` è quindi
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?R_4%28s%29%20%3D%20%5Cfrac%7B1%7D%7BM_2%28s%29%7D%20%5Cfrac%7B0.1%7D%7Bs%281%2B2s%29%7D%20"></p>
+```math
+R_4(s) = \frac{1}{M_2(s)} \frac{0.1}{s(1+2s)} 
+```
 
-``` matlab
+```matlab
 R4=1/M2 * tf(1,conv([10 0],[2 1]));
 clf;
 margin(R4 * M2);
@@ -181,23 +205,42 @@ margin(R4 * M2);
 
 Si deve ora esprimere `R4` nella foma *ISA*
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?R_4%28s%29%20%3D%20%5Cfrac%7BK%7D%7BT_i%7D%0A%5Cfrac%7Bs%5E2%20T_i%20%5Cleft%28T_d%20%2B%20%5Cfrac%7BT_d%7D%7BN%7D%5Cright%29%20%2B%20s%5Cleft%28T_i%20%2B%20%5Cfrac%7BT_d%7D%7BN%7D%5Cright%29%20%2B%201%7D%7Bs%5Cleft%281%20%2B%20s%5Cfrac%7BT_d%7D%7BN%7D%5Cright%29%7D"></p>
+```math
+R_4(s) = \frac{K}{T_i}
+\frac{s^2 T_i \left(T_d + \frac{T_d}{N}\right) + s\left(T_i + \frac{T_d}{N}\right) + 1}{s\left(1 + s\frac{T_d}{N}\right)}
+```
 
 I valori possono così essere ricavati:
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Cbegin%7Bdcases%7D%0A%5Cfrac%7BK%7D%7BT_i%7D%20%3D%20%5Cfrac%7B1%7D%7B1.383%7D%20%5C%5C%0AT_i%20%5Cleft%28T_d%20%2B%20%5Cfrac%7BT_d%7D%7BN%7D%5Cright%29%20%3D%201300%20%5C%5C%0AT_i%20%2B%20%5Cfrac%7BT_d%7D%7BN%7D%20%3D%20140%20%5C%5C%0A%5Cfrac%7BT_d%7D%7BN%7D%20%3D%202%0A%5Cend%7Bdcases%7D"></p>
+```math
+\begin{dcases}
+\frac{K}{T_i} = \frac{1}{1.383} \\
+T_i \left(T_d + \frac{T_d}{N}\right) = 1300 \\
+T_i + \frac{T_d}{N} = 140 \\
+\frac{T_d}{N} = 2
+\end{dcases}
+```
 
 da cui
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Cbegin%7Bdcases%7D%0AK%20%3D%2099.78%20%5C%5C%0AT_i%20%3D%20138%20%5C%5C%0AT_d%20%3D%207.42%20%5C%5C%0AN%20%3D%203.71%0A%5Cend%7Bdcases%7D"></p>
+```math
+\begin{dcases}
+K = 99.78 \\
+T_i = 138 \\
+T_d = 7.42 \\
+N = 3.71
+\end{dcases}
+```
 
 `R4` scritto in forma ISA è
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?R_4%28s%29%20%3D%2099.78%20%5Cleft%28%201%20%2B%20%5Cfrac%7B1%7D%7B138s%7D%20%5Cfrac%7B7.42s%7D%7B1%20%2B%202s%7D%20%5Cright%29"></p>
+```math
+R_4(s) = 99.78 \left( 1 + \frac{1}{138s} \frac{7.42s}{1 + 2s} \right)
+```
 
 Si può vedere che le due forme coincidono dal diagramma di Bode:
 
-``` matlab
+```matlab
 bode(R4,99.78*(1+tf(1,[138 0])+tf([7.42 0],[7.42/3.71 1])));
 ```
 
