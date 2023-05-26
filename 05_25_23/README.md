@@ -114,7 +114,7 @@ K2 = wc * Ti/mu;
 R2 = K2 * (1 + tf(1, [Ti 0]));
 ```
 
-Il tempo di assestamento $Ta $ del regolatore sarà ora
+Il tempo di assestamento $Ta$ del regolatore sarà ora
 
 ```math
 T_a = \frac{5}{\omega_{c_{R2}}} = 1000s
