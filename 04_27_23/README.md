@@ -42,23 +42,31 @@ Trovare la funzione di trasferimento che meglio descrive il sistema simulato
 
 
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Clim_%7Bs%5Cto%200%7D%20%5Cfrac%7B30%7D%7Bs%7D%20%5Ccdot%20s%20%5Ccdot%20%5Cfrac%7B%5Cmu%7D%7Bs%20T_1%20%2B%201%7D%20%3D%204.15"></p>
+```math
+\lim_{s\to 0} \frac{30}{s} \cdot s \cdot \frac{\mu}{s T_1 + 1} = 4.15
+```
 
 $4,15$ valore da trovare sul grafico
 
 Si può ricavare:
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Cmu%20%3D%20%5Cfrac%7B4.15%7D%7B30%7D"></p>
+```math
+\mu = \frac{4.15}{30}
+```
 
 - **Primo ordine**
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?M_1%20%3D%20%5Cfrac%7B%5Cmu%7D%7Bs%20T_1%20%2B%201%7D"></p>
+```math
+M_1 = \frac{\mu}{s T_1 + 1}
+```
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?T_1%20%3D%20%5Cfrac%7BT_A%7D%7B5%7D"></p>
+```math
+T_1 = \frac{T_A}{5}
+```
 
 ![Image_8](./Images/Image_8.png)
 
-``` matlab
+```matlab
 mu = 4.15/30;
 T1 = 620/5;
 
@@ -70,13 +78,15 @@ grid;
 
 - **Secondo ordine**
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?M_2%20%3D%20%5Cfrac%7B%5Cmu%7D%7B%28s%20T_1%20%2B%201%29%28s%20T_2%20%2B%201%29%7D"></p>
+```math
+M_2 = \frac{\mu}{(s T_1 + 1)(s T_2 + 1)}
+```
 
 $T_2$ con valore arbitrario ($T_2 \ll T_1$)
 
 ![Image_9](./Images/Image_9.png)
 
-``` matlab
+```matlab
 T2 = 10;
 
 M2 = tf(mu, conv([T1 1], [T2 1]));
@@ -87,7 +97,9 @@ grid;
 
 - **Terzo ordine e uno zero**
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?M_3%20%3D%20%5Cfrac%7B%5Cmu%28s%20T_z%20%2B%201%29%7D%7B%28s%20T_1%20%2B%201%29%28s%20T_2%20%2B%201%29%28s%20T_3%20%2B%201%29%7D"></p>
+```math
+M_3 = \frac{\mu(s T_z + 1)}{(s T_1 + 1)(s T_2 + 1)(s T_3 + 1)}
+```
 
 $T_3$ con valore arbitrario ($T_3 \ll T_2$)
 
@@ -95,7 +107,7 @@ $T_z$ con valore arbitrario ($|T_3| < |T_z| < |T_2|$)
 
 ![Image_10](./Images/Image_10.png)
 
-``` matlab
+```matlab
 Tz = 5;
 T3 = 2;
 
@@ -127,7 +139,7 @@ grid;
 
 ## Matlab
 
-``` matlab
+```matlab
 clear all
 close all
 clc
@@ -156,23 +168,29 @@ grid;
 
 $T$ periodo del segnale sinusoidale
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?w%20%3D%20%5Cfrac%7B2%5Cpi%7D%7BT%7D"></p>
+```math
+w = \frac{2\pi}{T}
+```
 
 - modulo della risposta
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?%5Cmu%20%3D%20%5Cfrac%7B%5Cfrac%7B%5Ctextnormal%7Bpeak%7D%7D%7B10%7D%7D%7B20%7D"></p>
+```math
+\mu = \frac{\frac{\textnormal{peak}}{10}}{20}
+```
 
 dove $\textnormal{peak}$ è il picco della risposta misurato dal grafico (riscalato di $10$ per visibilità sul grafico)
 
 - fase della risposta
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?p%20%3D%20%5Cfrac%7B%5CDelta%20t%7D%7BT%7D%5Ccdot%20360"></p>
+```math
+p = \frac{\Delta t}{T}\cdot 360
+```
 
 Dove $\Delta t$ è il tempo che trascorre tra un picco della sinusoide e uno della riposta (per $240$ è $(1020-1070)$)
 
 Codice:
 
-``` matlab
+```matlab
 %% Risposta alla prima frequenza (T=240s)
 w1 = 2*pi/240;
 m1 = 8.2/20/10;
@@ -193,7 +211,7 @@ p3 = (2055-2076)/60 * 360;
 
 Codice:
 
-``` matlab
+```matlab
 mu = 4.15/30;
 T1 = 620/5;
 M1 = tf(mu, [T1 1]);
@@ -225,7 +243,7 @@ pM3 = pM3(:);
 
 Codice:
 
-``` matlab
+```matlab
 wp = [w1, w2, w3];
 mp_db = 20*log10([m1, m2, m3]);
 pp = [p1 p2 p3];
@@ -243,7 +261,7 @@ legend('primo ordine', 'secondo ordine', 'terzo ordine con zero');
 
 Si nota che l’approssimazione più corretta è quella rossa, ma è ancora migliorabile:
 
-``` matlab
+```matlab
 %%  Modello migliore rispetto al dominio delle frequenze
 M4 = tf(mu * [4 1],conv(conv([110 1],[12 1]),[2 1]));
 
